@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"> 
+        <title>
+            Clone giao diện 2
+        </title>
+        <link rel="stylesheet" type="text/css" href="k.css">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    </head>
+    <body style="background-color: burlywood;">
+        <div id="container" class="container">
+            <h1>Test web cần những gì?</h1>
+            <p class="date">  20 tháng 08, 2020 </p>
+            <span class="tag label">Girlcode </span>
+            <span class="tag label">Lập trình</span>
+            <span class="tag label">Kiểm thủ</span>
+            <span class="tag label">Nghề nghiệp</span>
+            <span class="tag label">Cuộc sống</span>
+            <hr>
+        <h2>
+            Functionality test:
+        </h2>
+        <p>
+            &emsp; Điều quan trọng nhất của kiểm thử ứng dụng web là được xây dựng đúng với yêu cầu (requirements) của nhà cung cấp. Cần đọc kỹ requirement, sitemap cũng như từng business rule của dịch vụ web để bảo đảm là mọi thứ chạy đúng bản thiết kế và ý muốn khách hàng. Kiểm tra thiết kế theo các chuẩn thông dụng (web standards) về màu sắc, bố cục và bài trí có bảo đảm tiện dụng cho người dùng cuối (end-user) khi sử dụng không. Ta cần test trên cả 2 mảng front-end và back-end:
+        </p>
+        <ul>
+            <li>
+                <i>Kiểm tra nội dung hiển thị trên trang web</i>: Mỗi thành phần button, textbox, image, link trên page và bố cục page cần tuân theo chính xác kích thước và vị trí mà bản thiết kế UI quy định.
+            </li>
+            <li>
+                <i>Kiểm tra các link & menu</i>: Kiểm tra tất cả link nội bộ (internal link) và link ngoại bộ (external link) xem chúng có hoạt động không, có trỏ đến đúng địa chỉ mong muốn không. Ngoài ra, các link không được tự trỏ đến vị trí của chính nó và không tồn tại các orphan page.
+            </li>
+            <li>
+                <i>Kiểm tra các form nhập dữ liệu</i>. Cần bảo đảm các trường (field) dữ liệu được thiết kế đúng dạng, luôn có giá trị mặc định, luôn có bộ lọc kiểm tra (validation) những thông tin user nhập vào xem có hợp lệ không trước khi submit. Ngoài ra, quá trình chuyển tải thông tin từ browser đến server cũng cần bảo đảm là thông tin gửi đi khớp với những gì user nhập vào, không thất lạc và bị sai lệch.
+            </li>
+            <li>
+                <i>Kiểm tra lỗi cú pháp html/css</i>: Nội dung web được browser trình diễn dựa vào chuẩn ngôn ngữ html và css. Tất cả nội dung 1 trang web nhận được từ server chỉ bao gồm các html tag và css format, và chúng được browser biên dịch dựa vào các chuẩn trình diễn html. Các browser thế hệ mới đủ thông minh để nhận diện các đoạn html tag và css bị lỗi cú pháp và loại bỏ chúng khỏi web page. Điều này bảo đảm tính thẩm mỹ và tương tác cho người dùng nhưng nếu vô tình mẫu thông tin bị mất lại là thông tin quan trọng user cần. Vì vậy cần kiểm tra nội dung html và bảo đảm là ko có lỗi cú pháp xảy ra khi biên dịch. Bạn cần học cách chạy debug browser để tìm được lỗi cú pháp này vì đôi lúc lỗi đó không thể hiện lên trang web.
+            </li>
+            <li>
+                <i>Kiểm tra cookie (browser) & session (server)</i>: Cần kiểm tra xem thông tin session được lưu đúng và cookie được xóa khi user đăng xuất (logout). Đồng thời cookie cũng cần được mã hóa nếu chứa đựng thông tin nhạy cảm của người dùng. Kiểm tra session cho mỗi địa chỉ / tài khoản đăng nhập được server lưu trữ đúng, thời gian timeout cho mỗi lượt truy cập hay giới hạn truy cập cho mỗi tài khoản ở cùng 1 thời điểm (một số ứng dụng web đặc thù không cho phép đăng nhập cùng 1 tài khoản trên nhiều ip và browser khác nhau).
+            </li>
+            <li>
+                <i>Kiểm tra bản dịch (localization)</i>: Nếu ứng dụng của bạn hỗ trợ đa ngôn ngữ, test bản dịch từng ngôn ngữ là cần thiết để bảo đảm quá trình dịch không xảy ra trường hợp không sát nghĩa, bị tràn dòng khi dịch, v…v..
+            </li>
+            <li>
+                <i>Kiểm tra dữ liệu gửi về server được xử lý đúng</i>: Cần bảo đảm các hoạt động của ứng dụng web trên máy server có tuân thủ business rule và bản thiết kế . Kiểm tra bộ nhớ có bị rò rỉ hoặc cache server có được thu dọn đều đặn với mỗi phiên xử lý hay không.
+            </li>
+            <li>
+                <i>Kiểm tra database</i>: Kiểm tra dữ liệu truy xuất ra có khớp với giá trị lưu trữ, kiểm tra dữ liệu ghi xuống có đúng với những gì server nhận được hay không.
+            </li>
+            <li>
+                <i>Kiểm tra việc log dữ liệu trên server</i>: Việc log lại tất cả dữ liệu trao đổi, ngày giờ, nội dung truy cập, thông tin client và thông số server là cần thiết để truy lại và tìm ra nguyên nhân các sự cố, cũng như để bảo lưu và hồi phục dữ liệu trong trường hợp mất, hao hụt hoặc truy tìm danh tính 1 kẻ truy cập xấu. Hãy lên danh sách các thông tin cần log, kiểm thử việc log và bảo đảm thông tin log chính xác và được lưu trữ hợp lý.
+            </li>
+        </ul>
+        <h2>
+            Usability test:
+        </h2>
+            <p>
+                Việc bảo đảm web app được thiết kế thân thiện cho người dùng và dễ sử dụng là yếu tố quan trọng bảo đảm sự thành công của hệ thống.
+            </p>
+            <ul>
+                <li>
+                    <i>Kiểm tra nội dung</i> Đọc kỹ nội dung web để tránh lỗi chính tả, bố cục, câu cú.
+                </li>
+                <li>
+                    <i>Kểm tra các logic liên kết và hướng dẫn</i>: Hãy bảo đảm mọi thao tác trên trang web đều được hướng dẫn và gợi ý thông qua các tooltip, các thông báo, sitemap, các liên kết và hình ảnh nếu cần.
+                </li>
+                <li>
+                    <i>Kiểm tra văn hóa khu vực và đối tượng sử dụng</i>:Hãy bắt đầu quan sát và thu thập kiến thức về văn hóa về khu vực, đối tượng hướng đến của web Thêm vào đó, trong quá trình test, bạn hãy luôn bảo đảm rằng chuẩn thiết kế web app của bạn có thể được tìm thấy phổ biến ở nhiều web app khác.
+                </li>
+                <li>
+                    <i>Hệ thống của bạn có thể khác biệt và đột phá trong thiết kế? Có thể, nhưng hãy cân nhắc việc người dùng có thấy thân thiện khi sử dụng sự đột phá đó không.</i>
+                </li>
+            </ul>
+            <h2>
+                Compability test:
+            </h2>
+            <p>
+                Với đặc điểm hỗ trợ trên nhiều thiết bị, nhiều môi trường và công nghệ thay đổi chóng mặt, kiểm thử độ tương thích với web app là một thử thách không nhỏ vì trải dài và tốn nhiều công sức (lại có rủi ro cao). Việc lập ra các bảng kết hợp độ bao phủ (test coverage matrix) giữa các thiết bị, môi trường và các function cần test là một ý tưởng tốt để chắc rằng bạn ko bỏ sót kịch bản nào.
+            </p>
+            <p>
+                Một ví dụ của Test Coverage Matrix:
+            </p>
+            <ul>
+                <li>
+                    <i>Kiểm thử tương thích theo thiết bị & hệ điều hành</i>: Trước khi bắt tay vào kiểm thử hãy chắc chắn bạn có danh sách các thiết bị mà nhà cung cấp muốn web app của họ hỗ trợ. Không có phần mềm nào chạy hoàn hảo trên tất cả môi trường nên hãy đặt ưu tiên cho những môi trường cần hỗ trợ. Bạn cần nắm rõ về cấu hình, hệ điều hành và thiết lập của từng thiết bị để biết sự khác biệt của chúng khi trình diễn nội dung web. Hai điều cần lưu tâm nhất khi kiểm thử web với thiết bị là khung hình và khả năng hỗ trợ của thiết bị với các phiên bản html. Hãy truy cập tất cả nội dung web bạn có thể trên từng loại thiết bị và thay đổi zoom hình, quay ngang dọc để xem nội dung web thay đổi thế nào. Hãy chạy thử từng function trên trang web để bảo đảm chúng chạy đúng (functionality test)
+                </li>
+                <li>
+                    <i>Kiểm thử tương thích theo browser và thư viện hỗ trợ</i>: Cũng như việc kiểm thử theo thiết bị, chúng ta không thể bảo đảm một nội dung web sẽ hiển thị tốt trên tất cả browser vì mỗi browser tương đối khác nhau ở cách biên dịch html và thư viện hỗ trợ. Ngoài ra, mỗi loại browser và phiên bản browser sẽ có sự hỗ trợ khác nhau về phiên bản html, css và flash. Trong quá trình chạy kịch bản kiểm thử (run test case) cho functionality test, bạn cần kết hợp so sánh tính năng và nội dung trình diễn web trên tất cả những loại browser được yêu cầu hỗ trợ.
+                </li>
+            </ul>
+            <h2>
+                Performance test:
+            </h2>
+            <p>
+                Kiểm thử hiệu suất là một phương pháp khá khó và đòi hỏi nhiều kiến thức chuyên môn sâu rộng của tester.
+            </p>
+            <ul>
+                <li>
+                    <i>Kiểm thử trọng tải (load test)</i>: mỗi web app khi xây dựng, dựa vào nhu cầu và khả năng đáp ứng cấu hình host server sẽ có một yêu cầu tối thiểu cho web app về các thông số sau: lượng xử lý truy cập cho phép trong cùng 1 lúc (Throughput), thời gian tối thiểu cho mỗi request/response (response time), lưu lượng tối đa truy cập (query) vào server, đường truyền (bandwidth, lag latency) và hiệu suất xử lý back-end (Resource utilization). Để thực hiện load test, bạn cần thu thập yêu cầu tải trọng cho web app từ nhà cung cấp và cấu hình host server. Bạn cần giả lập môi trường cài đặt web app và học cách dùng performance tool để giả lập các lưu lượng truy cập (Vd: LoadRunner, Jmeter). Để vượt qua loại test này, web app cần chạy đúng và không xảy ra lỗi trong tất cả function được test với giả lập trọng tải bằng hoặc dưới yêu cầu tối thiểu
+                </li>
+                <li>
+                    <i>Kiểm thử sức chịu đựng (stress test)</i>: tương tự như load test nhưng bạn cần tăng lưu lượng giả lập vượt quá mức yêu cầu tối thiểu và tiến hành đo đạc thời gian hệ thống có thể chịu được trước khi xảy ra sự cố nghiêm trọng. Thông thường, server sẽ gia tăng lượng response lỗi (request timeout), xử lý chậm chạp dần tỷ lệ thuận với lượng truy cập quá tải trước khi thực sự xảy ra chết hệ thống (downtime). Kết quả đo đạc sẽ là thông tin quý giá để đội ngũ hỗ trợ có kế hoạch hồi phục tốt khi thực tế xảy ra.
+                </li>
+            </ul>
+            <h2>
+                Security test:
+            </h2>
+            <ul>
+            <li>
+                <i>Kiểm tra Captcha</i>: Để tránh database của bị sập vì quá tải với hàng trăm ngàn tài khoản ảo được tạo, ta dùng Capcha để tự động truy cập web app của bạn và lặp đi lặp lại việc đăng ký tài khoản.Cài đặt Captcha hợp lý để hạn chế việc spam những request nhạy cảm khả dĩ có thể làm hỏng hệ thống (đăng ký tài khoản, đăng nhập…). Tuy nhiên, việc cài đặt nên hạn chế tùy tiện vì chúng sẽ gây phiền phức cho user. Hãy thông báo nếu bạn thấy một function nào đó không được cài đặt Captcha hợp lý.
+            </li>
+            <li>
+               <i>Kiểm tra việc mã hóa dữ liệu trao đổi</i> : điều này là tối cần thiết nếu web app của bạn có hệ thống tài khoản, thanh toán online hoặc có nhu cầu trao đổi thông tin nhạy cảm với user. Bạn hãy xem gói dữ liệu request/response và đọc chúng để chắc rằng mọi thông tin quan trọng được giấu đi hoặc được mã hóa. Người ngoài không nên dễ dàng xem được hoặc tìm được cách giải mã chúng. Hệ thống có thông tin càng giá trị thì càng cần các biện pháp mã hóa tối tân. Hãy lên danh sách các trường dữ liệu được trao đổi qua hệ thống của bạn, đánh dấu những loại thông tin nhạy cảm và giả lập các tình huống test mà 1 guest (một truy cập lạ) có thể đọc được những thông tin đó. Thêm vào đó hãy liên hệ với đội ngũ developer để hiểu rõ cách web app tổ chức mã hóa dữ liệu thế nào và suy nghĩ các điểm yếu có thể. Nếu bạn chỉ mất vài tiếng để tìm ra cách trộm được thông tin, chắc chắn những kẻ xấu cũng vậy.
+            </li>
+            <li>
+                <i>Kiểm tra SSL và Certificates</i>: Hệ thống SSL (Secure Socket Layer) và Certificate là một biện pháp bảo mật phổ biến nhằm bảo đảm độ tin cậy của web app và kênh trao đổi với user. Tất cả các website khi đăng ký tên miền thường luôn kèm một Digital Certificate bao gồm 1 số serial và các thông tin cá nhân về tổ chức/doanh nghiệp của họ được đăng ký pháp lý trên hệ thống DNS. Khi một user truy cập vào tên miền đó, thông qua certificate user được bảo đảm rằng họ đã truy cập vào đúng địa chỉ mình cần thay vì một phishing site (những web giả mạo được lập ra với tên miền và giao diện tương đồng với một trang web nào đó nhằm lừa user gửi thông tin của họ đến server giả với mục đích trục lợi). Bạn hãy thu thập các thông tin về Certificate của hệ thống đang test và bảo đảm rằng khi lên live, web app của bạn và máy client được thiết lập Trust Certificate đúng và các thông tin được đăng ký chính xác. Hãy thử truy cập vào tên miền với tiếp đầu ngữ “https://…” và “http://…” và xem xét. Một thiết lập đúng sẽ hiện thông điệp về certificate khi bạn dùng “https”
+            </li>
+            <li>
+                <i>Kiểm tra việc truy cập tài nguyên thông qua tên miền</i>: Cần bảo đảm user bị chặn truy cập vào tất cả những webpage, những file và thư mục mà họ không được phép truy cập. Ngoài ra, bạn hãy kiểm tra tất cả các tên định danh của webpage và đường dẫn URL đến các tài nguyên nhạy cảm trên server để bảo đảm chúng không quá phổ thông và dễ đoán. Hãy thử truy cập tài nguyên thông qua 1 số giao thức khác ngoài http (vd ftp,…) và bảo đảm tất cả giao thức không cần thiết đều được tắt để hạn chế truy cập ngoài ý muốn. Nếu có điều kiện, bạn hãy tìm hiểu về SQL Injection và áp dụng chúng vào việc kiểm thử xem hệ thống có dễ bị tấn công thông qua việc dùng parameter trên URL hay không.
+            </li>
+            </ul>
+            <h2>
+                Kết Luận
+            </h2>
+            <p>
+                &emsp;Test web thực sự không khó nhưng đòi hỏi sự nghiêm túc trong việc nghiên cứu và tích lũy kinh nghiệm qua từng giai đoạn làm việc. Test web không cần nhiều kiến thức sâu rộng về mạng (network), tuy nhiên thay vào đó bạn cần có những hiểu biết nhất định về nguyên tắc giao tiếp dữ liệu và các loại ngôn ngữ trình diễn web. Bạn cũng cần tập luyện thói quen tìm hiểu các công nghệ phát triển web và phong cách trình diễn web mới (vốn thay đổi liên tục theo thời gian). Nếu bạn còn phân vân chưa biết học làm thế nào tiếp theo, hãy học một khóa Nền tảng lập trình trước tiên để nắm được kiến thức về lập trình cơ bản đã nhé. 
+            </p>
+        </div>
+    </body>
+</html>

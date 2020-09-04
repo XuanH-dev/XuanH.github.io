@@ -1,0 +1,45 @@
+*{
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+#container {
+
+}
+ body{
+     background-color: blueviolet;
+ }
+.container{
+    width:80%;
+    height: 1000px;
+    background-color: #fff;
+    margin: auto;
+    padding: 30px 50px 30px 20px;
+}
+h1{
+    color: brown;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.date{
+    color: #464646;
+    margin-bottom: 15px;
+}
+
+hr{
+    color:gray;
+    height: 1px;
+    margin-top: 10px;
+    border-width: 0px;
+}
+
+.tag{
+    background-color: #e5e5e5;
+    color: #808080;
+    border: 1px solid #d4d4d4;
+    padding: 4px;
+    font-size: 13px;
+    margin-right: 8px;
+    border-radius: 10px;
+}

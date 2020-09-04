@@ -1,0 +1,14 @@
+/* External css */
+h1 {
+    margin: ;
+    border: 5px solid color: blue;
+    display: inline;
+
+}
+h2{
+    background-color: teal;
+    color: white;
+}
+h1, h2 {
+    text-align: center;
+}
