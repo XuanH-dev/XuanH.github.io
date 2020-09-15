@@ -1,0 +1,51 @@
+#danh_muc ul {
+    list-style-type: none;
+    margin-right: 50px;
+    display: inline-block;
+    width: 30%;
+}
+
+#danh_muc ul li {
+    line-height: 40px;
+    position: relative;
+    margin: 0 20px 0 20px;
+    background-color: palegreen;
+    display: flex;
+    justify-content: space-between;
+}
+
+#danh_muc ul li a {
+    color: blue;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+#danh_muc ul li .sub-menu  {
+    display: none;
+    position: absolute;
+    top: 0px;
+    left: 100%;
+    width: 100%;
+    border-style: groove;
+}
+
+
+#danh_muc ul li:hover .sub-menu {
+    display: block;
+    color: purple;
+}
+
+
+#danh_muc ul  li ul li .pri-menu {
+    display: none;
+    position: absolute;
+    top: 0%;
+    left: 100%;
+    width: 100%;
+    border-style: groove;
+}
+
+#danh_muc ul li ul li:hover .pri-menu {
+    display: block;
+    color: purple;
+}
